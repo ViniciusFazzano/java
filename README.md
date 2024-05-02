@@ -10,6 +10,8 @@ Olá, eu sou Vinicius da Gama Fazzano. Bem-vindo ao meu repositório!
 
 ## Acompanhamento do Projeto
 
+- **Projeto escolhido:** GerenSystem
+
 Para acompanhar o progresso dos meus projetos, confira meu quadro no Trello:
 
 [Link para o Trello](https://trello.com/b/A6D0rQHE/trabalho-andre)

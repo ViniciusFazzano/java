@@ -8,7 +8,7 @@ Olá, eu sou Vinicius da Gama Fazzano. Bem-vindo ao meu repositório!
 - **E-mail:** viniciusg8justinfazzano@gmail.com
 - **E-mail Academico:** 802.333@alunos.unigra.com
 
-- - **Nome:** Beatriz Esteves
+- **Nome:** Beatriz Esteves
 - **E-mail:** beatrizesteves@gmail.com
 - **E-mail Academico:** 802.@alunos.unigra.com
 

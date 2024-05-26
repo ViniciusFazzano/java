@@ -5,13 +5,25 @@
 package entidades;
 
 import java.io.Serializable;
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import lombok.Data;
+
+
+
 
 /**
  *
  * @author Beatriz
  */
+
 @Entity
-public @Data class Prontuario implements Serializable{
+@Data public class Prontuario implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

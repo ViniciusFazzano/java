@@ -5,8 +5,16 @@
 package entidades;
 
 import java.io.Serializable;
-import java.util.Date;
-
+import java.time.LocalDate;
+import java.time.LocalTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import lombok.Data;
 /**
  *
  * @author Beatriz
@@ -17,9 +25,9 @@ public @Data class Agendamento implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Temporal(TemporalType.DATE)
-    private Localdate data;
+    private LocalDate data;
     @Temporal(TemporalType.TIME)
-    private Localtime hora;
+    private LocalTime hora;
     @ManyToOne
     private Paciente paciente;
     @ManyToOne

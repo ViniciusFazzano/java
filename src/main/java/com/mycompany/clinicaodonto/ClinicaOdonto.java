@@ -4,6 +4,8 @@
 
 package com.mycompany.clinicaodonto;
 
+import view.Login;
+
 /**
  *
  * @author Beatriz
@@ -11,6 +13,6 @@ package com.mycompany.clinicaodonto;
 public class ClinicaOdonto {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Login.main(args);
     }
 }

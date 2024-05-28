@@ -28,12 +28,16 @@ public class LoginController implements Controller {
 
     private Object builderJSOn(JSONObject func) {
         Login login = new Login();
-        Funcao funcao = new Funcao();
+        FuncaoController funcaoController = new FuncaoController();
+        String funcaoNome = func.get("tipoUsuario").toString();
+        System.out.println(funcaoNome);
+        System.out.println(funcaoController.getDados(funcaoNome));
+//        System.out.println(func.get("pass").toString());
         login.setSenha(func.get("pass").toString());
         login.setUsuario(func.get("nomelogin").toString());
-        login.setFuncao(func.get("tipoUsuario"));
+//        login.setFuncao(func.get("tipoUsuario"));
         System.out.println(login);
-        return func;
+        return login;
 
     }
 

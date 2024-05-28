@@ -6,7 +6,6 @@ package percistencia.agenda;
 
 import entidades.Paciente;
 import java.util.List;
-import percistencia.padrao.InterfaceDao;
 
 /**
  *
@@ -16,8 +15,9 @@ public class AgendaImpl implements AgendaDao {
 
     @Override
     public List<Paciente> listar() {
-
-        return listar(Paciente.class);
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+
 
 }

@@ -21,19 +21,12 @@ import lombok.Data;
 public @Data class FormaPagamento implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column
-    private Integer tipo_pagamento;
+    private TipoPagamento tipo_pagamento;
     @Column
-    private Integer valor;
+    private Double valor;
     @OneToOne
     private Consulta consulta_id;
     
-    public void setTipoDePagamento(TipoPagamento tipoPagamento){
-      this.tipo_pagamento = tipoPagamento.codigo;
-   }
-    
-    public Optional<TipoPagamento> getTipoDePagemento(){
-      return TipoPagamento.buscarPorCodigo(this.tipo_pagamento);
-   }
 }

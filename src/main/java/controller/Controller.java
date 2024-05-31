@@ -4,6 +4,7 @@
  */
 package controller;
 
+import com.mycompany.clinicaodonto.dto.DTO;
 import java.util.List;
 import org.json.JSONObject;
 
@@ -24,4 +25,9 @@ public interface Controller {
 
     public void salvar(JSONObject func) throws Exception;
 
+    public void salvaDTO (DTO dto) throws Exception;
+    
+    public void removerDTO (DTO dto);
+    
+    public Object[] getDadosDTO(DTO dto);//array matriz
 }

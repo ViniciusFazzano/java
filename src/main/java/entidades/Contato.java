@@ -20,7 +20,7 @@ import lombok.Data;
 public @Data class Contato implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column
     private String informacao;
     

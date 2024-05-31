@@ -20,11 +20,11 @@ import javax.persistence.ManyToOne;
 public class Prontuarios implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column
     private String descricao;
     @ManyToOne
-    private Integer consulta_id;
+    private Consulta consulta;
     @ManyToOne
-    private Integer prontuario_id;
+    private Prontuario prontuario;
 }

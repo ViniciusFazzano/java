@@ -23,7 +23,7 @@ import lombok.Data;
 public @Data class Agendamento implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Temporal(TemporalType.DATE)
     private LocalDate data;
     @Temporal(TemporalType.TIME)
@@ -31,7 +31,7 @@ public @Data class Agendamento implements Serializable{
     @ManyToOne
     private Paciente paciente;
     @ManyToOne
-    private Dentista dentista;
+    private Funcionario dentista;
     @ManyToOne
     private Funcionario recepcionista_id;
 }

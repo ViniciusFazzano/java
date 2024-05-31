@@ -6,12 +6,14 @@ package entidades;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import lombok.Data;
@@ -24,7 +26,7 @@ import lombok.Data;
 public @Data class Paciente implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column
     private String nome;
     @Column
@@ -38,5 +40,18 @@ public @Data class Paciente implements Serializable{
     @ManyToOne
     private Paciente responsavel;
 
+    @OneToMany(mappedBy = "responsavel")
+    private List<Paciente> pacientes;
+
+    @OneToMany(mappedBy = "paciente")
+    private List<Contato> contatos;    
     
+    @OneToMany(mappedBy = "paciente")
+    private List<Consulta> consultas;
+
+    @OneToMany(mappedBy = "paciente")
+    private List<Agendamento> agendamentos;
+    
+    @OneToMany(mappedBy = "paciente")
+    private List<Prontuario> prontuarios;
 }

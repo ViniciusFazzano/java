@@ -5,12 +5,14 @@
 package entidades;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import lombok.Data;
 /**
  *
@@ -20,9 +22,12 @@ import lombok.Data;
 public @Data class Endereco implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column
     private String rua;
     @ManyToOne
     private Cidade cidade_id;
+    
+    @OneToMany(mappedBy = "endereco")
+    private List<Paciente> pacientes;
 }

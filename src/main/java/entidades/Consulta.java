@@ -25,7 +25,7 @@ public class Consulta implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column
     private String observacao;
@@ -37,5 +37,11 @@ public class Consulta implements Serializable {
     private Paciente paciente;
 
     @ManyToOne
-    private Dentista dentista;
+    private Funcionario dentista;
+    
+    @OneToMany(mappedBy = "consulta")
+    private List<FormaPagamento> formaPagamentos;
+
+    @OneToMany(mappedBy = "consulta")
+    private List<Prontuarios> prontuarios;
 }

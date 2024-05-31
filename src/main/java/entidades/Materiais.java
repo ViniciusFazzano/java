@@ -20,11 +20,11 @@ import lombok.Data;
 public @Data class Materiais implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column
     private String nome;
     @Column
-    private Integer qtdminima;
+    private Integer qtd;
     @ManyToOne
     private Login usuariocadastrado_id;
 

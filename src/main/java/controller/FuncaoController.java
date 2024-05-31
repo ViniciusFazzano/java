@@ -4,6 +4,7 @@
  */
 package controller;
 
+import com.mycompany.clinicaodonto.dto.DTO;
 import java.util.List;
 import org.json.JSONObject;
 import percistencia.funcao.FuncaoDao;
@@ -48,6 +49,21 @@ public class FuncaoController implements Controller {
 
     @Override
     public void salvar(JSONObject func) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void salvaDTO(DTO dto) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void removerDTO(DTO dto) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Object[] getDadosDTO(DTO dto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

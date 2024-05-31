@@ -9,12 +9,12 @@ Olá, eu sou Vinicius da Gama Fazzano. Bem-vindo ao meu repositório!
 - **E-mail Academico:** 802.333@alunos.unigra.com
 
 - **Nome:** Beatriz Esteves
-- **E-mail:** beatrizesteve@gmail.com
-- **E-mail Academico:** 802.@alunos.unigra.com
+- **E-mail:** bestevesgoncalves@gmail.com
+- **E-mail Academico:** 802.474@alunos.unigra.com
 
 ## Acompanhamento do Projeto
 
-- **Projeto escolhido:** Cliinica Odonto
+- **Projeto escolhido:** Clinica Odonto
 
 Para acompanhar o progresso dos meus projetos, confira meu quadro no Trello:
 

@@ -6,6 +6,7 @@ package percistencia.login;
 
 import entidades.Login;
 import java.util.List;
+import org.json.JSONObject;
 import percistencia.padrao.Dao;
 import percistencia.padrao.InterfaceDao;
 
@@ -17,8 +18,7 @@ public interface LoginDao extends InterfaceDao {
 
     public List<Login> listar();
 
-    @Override
-    public default void salvar(Object entidade) {
-        Dao.getInstace().salvar(entidade);
-    }
+    public void salvar(Object entidade) ;
+    
+    public boolean verificaExiste(JSONObject entidade);
 }

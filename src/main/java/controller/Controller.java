@@ -23,6 +23,8 @@ public interface Controller {
 
     public void remover(JSONObject func);
 
+    public boolean verificaExiste(JSONObject func) throws Exception;
+
     public void salvar(JSONObject func) throws Exception;
 
     public void salvaDTO (DTO dto) throws Exception;

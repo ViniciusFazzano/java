@@ -62,5 +62,10 @@ public class MateriaisController implements Controller{
     public void salvar(JSONObject func) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }   
+
+    @Override
+    public boolean verificaExiste(JSONObject func) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

@@ -31,7 +31,7 @@ public @Data class Login implements Serializable {
     @Column
     private String usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "funcao_id")
-    private Funcao funcao;
+//    @ManyToOne
+//    @JoinColumn(name = "funcao_id")
+    private int funcao;
 }

@@ -1,7 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.mycompany.clinicaodonto;
 
 import controller.Controller;
@@ -20,5 +19,6 @@ public class ClinicaOdonto {
 
     public static void main(String[] args) {
         new Cadastro(null, false,new CadastroPaciente(), new PacienteController()).setVisible(true);
+//        Login.main(args);
     }
 }

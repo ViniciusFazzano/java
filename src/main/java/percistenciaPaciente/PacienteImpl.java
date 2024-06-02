@@ -13,12 +13,13 @@ import persistencia.funcionario.FuncionarioDao;
  *
  * @author Beatriz
  */
-public class PacienteImpl implements FuncionarioDao{
+public class PacienteImpl implements FuncionarioDao {
 
     @Override
     public List listarbyNome(String nome) {
         return Dao.getInstace().getEm().createNativeQuery(
-                 "select * from paciente where nome like '% :? %'",Paciente.class)
-                .setParameter(1,nome).getResultList();}
-    
+                "select * from paciente where nome like '% :? %'", Paciente.class)
+                .setParameter(1, nome).getResultList();
+    }
+
 }

@@ -158,7 +158,7 @@ public class Login extends javax.swing.JFrame {
             if (acesso == true) {
                 JOptionPane.showMessageDialog(null, "BEM VINDO");
                 dispose();
-                MenuPrincipal.main();
+//                MenuPrincipal.main();
 
             } else {
                 JOptionPane.showMessageDialog(null, "ACESSO NEGADO");

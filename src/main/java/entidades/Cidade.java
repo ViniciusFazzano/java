@@ -26,11 +26,11 @@ public @Data class Cidade implements Serializable{
     private Long id;
     @Column
     private String nome;
-    @Column
-    private String estado;
     
-    @OneToMany(mappedBy = "cidade", fetch = FetchType.LAZY)
-    private List<Endereco> endereco;
+    private UF estado;
+    
+//    @OneToMany(mappedBy = "cidade", fetch = FetchType.LAZY)
+//    private List<Endereco> endereco;
         
     
 }

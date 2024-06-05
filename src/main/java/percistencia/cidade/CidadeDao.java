@@ -2,17 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package percistenciaPaciente;
+package percistencia.cidade;
 
-import entidades.Paciente;
-import java.util.List;
+import entidades.Cidade;
 import percistencia.padrao.InterfaceDao;
 
 /**
  *
  * @author Beatriz
  */
-public interface PacienteDao extends InterfaceDao{
-    public  List listarbyNome(String nome);
-    public Paciente existePaci(String nome);
+public interface CidadeDao extends InterfaceDao{
+    public Cidade existeCid(String nome);
 }

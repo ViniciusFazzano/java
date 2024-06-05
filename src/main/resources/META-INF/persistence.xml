@@ -4,12 +4,25 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>entidades.Login</class>
     <class>entidades.Funcao</class>
+    <class>entidades.Agendamento</class>
+    <class>entidades.Arquivo</class>
+    <class>entidades.Cidade</class>
+    <class>entidades.Consulta</class>
+    <class>entidades.Contato</class>
+    <class>entidades.Dentista</class>
+    <class>entidades.Endereco</class>
+    <class>entidades.FormaPagamento</class>
+    <class>entidades.Funcionario</class>
+    <class>entidades.Materiais</class>
+    <class>entidades.Paciente</class>
+    <class>entidades.Prontuario</class>
+    <class>entidades.Prontuarios</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="batata"/>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.jdbc.password" value="123"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
 </persistence>

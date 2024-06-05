@@ -25,9 +25,9 @@ public @Data class Endereco implements Serializable{
     private Long id;
     @Column
     private String rua;
-    @ManyToOne
-    private Cidade cidade_id;
-    
+//    @ManyToOne
+//    private Cidade cidade_id;
+//    
     @OneToMany(mappedBy = "endereco")
     private List<Paciente> pacientes;
 }

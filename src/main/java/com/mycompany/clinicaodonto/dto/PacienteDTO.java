@@ -9,9 +9,16 @@ import entidades.Contato;
 import entidades.Endereco;
 import entidades.Funcionario;
 import entidades.Paciente;
+import entidades.UF;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import percistencia.cidade.CidadeDao;
+import percistencia.cidade.CidadeImpl;
+import percistencia.endereco.EnderecoDao;
+import percistencia.endereco.EnderecoImpl;
+import percistenciaPaciente.PacienteDao;
+import percistenciaPaciente.PacienteImpl;
 
 /**
  *
@@ -36,17 +43,37 @@ public class PacienteDTO extends DTO{
          paciente.setCpf(cpfPaciente);
          paciente.setDataNasc(nascPaciente);
          paciente.setNumCasa(numero);
-         //Endereco end = new Endereco();
-         //end.setRua(endereco);
-         //Cidade cid = new Cidade();
-         //cid.setNome(cidade);
-         //cid.setEstado(estado);
-         Paciente responsavel = new Paciente();
-         responsavel.setNome(nomeResponsavel);
+         EnderecoDao endDao = new EnderecoImpl();
+         Endereco end = endDao.existeEnd(endereco);
+         if(end == null){
+             end = new Endereco(); 
+             end.setRua(endereco);
+             endDao.salvar(end);
+             CidadeDao cidDao = new CidadeImpl();
+             Cidade cid = cidDao.existeCid(cidade);             
+             if(cid == null){
+                 cid =new Cidade();
+                 cid.setNome(cidade);
+//                 cid.setEndereco((List<Endereco>) end);
+                 cid.setEstado(UF.valueOf(id));
+                 cidDao.salvar(cid);
+             }
+     //        end.setCidade_id(cid);
+         }
+         paciente.setEndereco_id(end);
+         PacienteDao paciDao = new PacienteImpl();
+         Paciente responsavel = paciDao.existePaci(nomeResponsavel);
+         if(responsavel == null){
+             responsavel = new Paciente();
+             responsavel.setId(id!=null?Long.valueOf(id):0l);
+             responsavel.setNome(nomeResponsavel);
+             paciDao.salvar(responsavel);
+         }
          paciente.setResponsavel(responsavel);
          Contato cont = new Contato();
          cont.setInformacao(contato);
          cont.setPaciente_id(paciente);
+         paciente.setContatos((List<Contato>) cont);
          return paciente;
     }
     
@@ -67,10 +94,9 @@ public class PacienteDTO extends DTO{
         dto.cpfPaciente=p.getCpf();
         dto.nascPaciente=p.getDataNasc();
         dto.numero=p.getNumCasa();
-        //dto.endereco=p.getEndereco_id()
-        //dto.estado
-        //dto.nomeResponsavel=p.getResponsavel.toString;
-        //dto.contato=p.getContatos();
+        dto.endereco=p.getEndereco_id().getRua();
+        dto.nomeResponsavel=p.getResponsavel().getNome();
+        dto.contato=p.getContatos().toString();
         
         return dto;
     }

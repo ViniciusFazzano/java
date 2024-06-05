@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import lombok.Data;
@@ -24,6 +25,7 @@ import lombok.Data;
  */
 @Entity
 public @Data class Paciente implements Serializable{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -36,7 +38,7 @@ public @Data class Paciente implements Serializable{
     @Column
     private String numCasa;
     @ManyToOne
-    private Endereco endereco_id;
+    private Endereco endereco;
     @ManyToOne
     private Paciente responsavel;
 

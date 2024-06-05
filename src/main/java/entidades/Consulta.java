@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import lombok.Data;
 
 /**
@@ -22,6 +23,9 @@ import lombok.Data;
 @Entity
 @Data
 public class Consulta implements Serializable {
+
+    @OneToOne(mappedBy = "consulta_id")
+    private FormaPagamento formaPagamento;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,8 +43,6 @@ public class Consulta implements Serializable {
     @ManyToOne
     private Funcionario dentista;
     
-    @OneToMany(mappedBy = "consulta")
-    private List<FormaPagamento> formaPagamentos;
 
     @OneToMany(mappedBy = "consulta")
     private List<Prontuarios> prontuarios;

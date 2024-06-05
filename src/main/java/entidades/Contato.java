@@ -26,5 +26,5 @@ public @Data class Contato implements Serializable{
     
     private Integer tipo;
     @ManyToOne
-    private Paciente paciente_id;
+    private Paciente paciente;
 }

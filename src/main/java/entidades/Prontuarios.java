@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -25,6 +26,6 @@ public class Prontuarios implements Serializable{
     private String descricao;
     @ManyToOne
     private Consulta consulta;
-    @ManyToOne
+    @OneToOne
     private Prontuario prontuario;
 }

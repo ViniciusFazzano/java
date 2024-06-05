@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import lombok.Data;
 /**
  *
@@ -17,6 +18,9 @@ import lombok.Data;
  */
 @Entity
 public @Data class Arquivo implements Serializable{
+
+    @ManyToOne
+    private Consulta consulta;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

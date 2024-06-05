@@ -5,7 +5,6 @@
 package entidades;
 
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import lombok.Data;
 /**
@@ -13,8 +12,8 @@ import lombok.Data;
  * @author Beatriz
  */
 @Entity
-public @Data class Dentista extends Funcionario implements Serializable{
-    @Column
-    public String cro;
+public  class Dentista extends Funcionario implements Serializable{
+    
+    private String cro;
 
 }

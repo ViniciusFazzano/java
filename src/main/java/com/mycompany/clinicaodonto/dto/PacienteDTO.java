@@ -60,7 +60,7 @@ public class PacienteDTO extends DTO{
              }
      //        end.setCidade_id(cid);
          }
-         paciente.setEndereco_id(end);
+         paciente.setEndereco(end);
          PacienteDao paciDao = new PacienteImpl();
          Paciente responsavel = paciDao.existePaci(nomeResponsavel);
          if(responsavel == null){
@@ -72,7 +72,7 @@ public class PacienteDTO extends DTO{
          paciente.setResponsavel(responsavel);
          Contato cont = new Contato();
          cont.setInformacao(contato);
-         cont.setPaciente_id(paciente);
+         cont.setPaciente(paciente);
          paciente.setContatos((List<Contato>) cont);
          return paciente;
     }
@@ -94,7 +94,7 @@ public class PacienteDTO extends DTO{
         dto.cpfPaciente=p.getCpf();
         dto.nascPaciente=p.getDataNasc();
         dto.numero=p.getNumCasa();
-        dto.endereco=p.getEndereco_id().getRua();
+        dto.endereco=p.getEndereco().getRua();
         dto.nomeResponsavel=p.getResponsavel().getNome();
         dto.contato=p.getContatos().toString();
         

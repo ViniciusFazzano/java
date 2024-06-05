@@ -5,13 +5,11 @@
 package entidades;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import lombok.Data;
 
 /**
@@ -21,12 +19,14 @@ import lombok.Data;
 
 @Entity
 @Data public class Prontuario implements Serializable{
+
+    @OneToOne(mappedBy = "prontuario")
+    private Prontuarios prontuarios;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    private Paciente paciente_id;
     
-    @OneToMany(mappedBy = "prontuario")
-    private List<Prontuarios> prontuarioss;
+    @OneToOne
+    private Paciente paciente;
+    
 }

@@ -26,7 +26,7 @@ public class MateriaisController implements Controller{
     }
     
     @Override
-    public Object[] getDadosDTO(DTO o) {
+    public Object[] getDados(DTO o) {
         MateriaisDTO dto = (MateriaisDTO) o;
         return new Object[]{dto.id, dto.nome, dto.qtd};
     }
@@ -39,12 +39,12 @@ public class MateriaisController implements Controller{
     }
     
     @Override
-    public void salvaDTO(DTO dto) throws Exception {
+    public void salva(DTO dto) throws Exception {
         dao.atualiza(dto.builder());
     }
 
     @Override
-    public void removerDTO(DTO dto) {
+    public void remover(DTO dto) {
         dao.remove(((MateriaisDTO) dto).builder());
     }
     

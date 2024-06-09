@@ -53,17 +53,17 @@ public class FuncaoController implements Controller {
     }
 
     @Override
-    public void salvaDTO(DTO dto) throws Exception {
+    public void salva(DTO dto) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void removerDTO(DTO dto) {
+    public void remover(DTO dto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Object[] getDadosDTO(DTO dto) {
+    public Object[] getDados(DTO dto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

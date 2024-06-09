@@ -27,7 +27,7 @@ public class PacienteController implements Controller{
     }
 
     @Override
-    public void salvaDTO(DTO paciente) throws Exception {
+    public void salva(DTO paciente) throws Exception {
         dao.atualiza(paciente.builder());
     }
 
@@ -39,12 +39,12 @@ public class PacienteController implements Controller{
     }
     
     @Override
-    public void removerDTO(DTO dto) {
+    public void remover(DTO dto) {
         dao.remove(((PacienteDTO) dto).builder());
     }
 
     @Override
-    public Object[] getDadosDTO(DTO o) {
+    public Object[] getDados(DTO o) {
         PacienteDTO dto = (PacienteDTO) o;
         return new Object[]{dto.nomePaciente, new SimpleDateFormat("dd/MM/yyyy").format(dto.nascPaciente), dto.cpfPaciente, dto.nomeResponsavel, dto.contato};
     }

@@ -3,9 +3,12 @@
  */
 package com.mycompany.clinicaodonto;
 
+import controller.FuncaoController;
 import entidades.Paciente;
 import percistencia.padrao.Dao;
 import view.Login;
+import view.cadastro.Cadastro;
+import view.cadastro.CadastroFuncionario;
 
 /**
  *
@@ -14,7 +17,8 @@ import view.Login;
 public class ClinicaOdonto {
 
     public static void main(String[] args) {
-       Dao.getInstace().listar(Paciente.class, "");       // new Cadastro(null, true,new CadastroFuncionario(), new FuncaoController()).setVisible(true);
-       // Login.main(args);
+//        Dao.getInstace().listar(Paciente.class, "");
+//        new Cadastro(null, true, new CadastroFuncionario(), new FuncaoController()).setVisible(true);
+         Login.main(args);
     }
 }

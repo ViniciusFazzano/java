@@ -20,15 +20,21 @@ public class Cadastro extends javax.swing.JDialog {
      */
     PainelInterface painel;
     Controller controller;
-    public Cadastro(java.awt.Frame parent, boolean modal, PainelInterface painel,Controller c) {
+
+    public Cadastro(java.awt.Frame parent, boolean modal, PainelInterface painel, Controller c) {
+
         super(parent, modal);
+
         initComponents();
-        add(painel,BorderLayout.CENTER);
-        this.painel=painel;
-        controller=c;
-     //   setLocationRelativeTo(parent);
+        add(painel, BorderLayout.CENTER);
+        this.painel = painel;
+        controller = c;
+        setResizable(false);
+        setLocationRelativeTo(parent);
+//        setLocationRelativeTo(parent);
         pack();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -79,8 +85,8 @@ public class Cadastro extends javax.swing.JDialog {
     private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
         try {
             // TODO add your handling code here:
-            controller.salvaDTO(painel.salvar());
-       
+            controller.salva(painel.salvar());
+
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
@@ -100,18 +106,3 @@ public class Cadastro extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -26,5 +26,5 @@ public @Data class Funcionario implements Serializable{
     @Column
     private String registro;
     @OneToOne
-    private Login loin_id;
+    private Login login_id;
 }

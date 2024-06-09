@@ -158,7 +158,7 @@ public class Login extends javax.swing.JFrame {
             if (acesso == true) {
                 JOptionPane.showMessageDialog(null, "BEM VINDO");
                 dispose();
-//                MenuPrincipal.main();
+                MenuPrincipal.main();
 
             } else {
                 JOptionPane.showMessageDialog(null, "ACESSO NEGADO");
@@ -205,8 +205,8 @@ public class Login extends javax.swing.JFrame {
             public void run() {
 
                 JFrame frame = new Login();
-                frame.setResizable(false); // Desabilita redimensionamento da janela
-                frame.setLocationRelativeTo(null); // Posiciona a janela no centro da tela
+                frame.setResizable(false); 
+                frame.setLocationRelativeTo(null); 
                 frame.setVisible(true);
             }
         });

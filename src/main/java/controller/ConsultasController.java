@@ -21,17 +21,17 @@ public class ConsultasController implements Controller{
     ConsultaDao dao = new ConsultaImpl();
     
     @Override
-    public void salvaDTO(DTO dto) throws Exception {
+    public void salva(DTO dto) throws Exception {
         dao.atualiza(dto.builder());
     }
 
     @Override
-    public void removerDTO(DTO dto) {
+    public void remover(DTO dto) {
         dao.remove(((ConsultaDTO) dto).builder());
     }
 
     @Override
-    public Object[] getDadosDTO(DTO o) {
+    public Object[] getDados(DTO o) {
         ConsultaDTO dto = (ConsultaDTO) o;
         return new Object[]{dto.id, dto.nomePaciente, dto.obs, dto.anexos, dto.nomeDentista, dto.pagamento};
     }

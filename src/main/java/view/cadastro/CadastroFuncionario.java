@@ -68,19 +68,20 @@ public class CadastroFuncionario extends PainelInterface {
     }// </editor-fold>//GEN-END:initComponents
 
     FuncionarioDTO f;
-    
+
     @Override
     public DTO salvar() {
-        if(f==null)
-            f= new FuncionarioDTO();
-        f.nomeFuncionario=jNome.getText();
-        f.numeroRegistro=jRegistro.getText();
+        if (f == null) {
+            f = new FuncionarioDTO();
+        }
+        f.nomeFuncionario = jNome.getText();
+        f.numeroRegistro = jRegistro.getText();
         return f;
     }
 
     @Override
     public void preencheCampos(DTO dto) {
-        f=(FuncionarioDTO) dto;
+        f = (FuncionarioDTO) dto;
         jNome.setText(f.nomeFuncionario);
         jRegistro.setText(f.numeroRegistro);
     }

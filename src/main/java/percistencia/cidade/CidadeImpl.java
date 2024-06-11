@@ -17,8 +17,8 @@ public class CidadeImpl implements CidadeDao{
     @Override
     public Cidade existeCid(String nome) {
         List<Cidade> resultList = Dao.getInstace().getEm().createNativeQuery(
-                "select * from cidade ",Cidade.class)
-                .getResultList();
+                "select * from cidade where nome=?",Cidade.class)
+                .setParameter(1, nome).getResultList();
         return !resultList.isEmpty()?resultList.get(0):null;
     }
     

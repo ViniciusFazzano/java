@@ -17,8 +17,8 @@ public class EnderecoImpl implements EnderecoDao{
     @Override
     public Endereco existeEnd(String nome) {
         List<Endereco> resultList = Dao.getInstace().getEm().createNativeQuery(
-                "select * from endereco  ",Endereco.class)
-                .getResultList();
+                "select * from endereco where rua=?",Endereco.class)
+                .setParameter(1, nome).getResultList();
         return !resultList.isEmpty()?resultList.get(0):null;
     }
     

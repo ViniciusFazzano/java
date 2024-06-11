@@ -24,7 +24,7 @@ public class FuncionarioImpl implements FuncionarioDao {
     @Override
     public Funcionario existePaci(String nome) {
         List<Funcionario> resultList = Dao.getInstace().getEm().createNativeQuery(
-                "select * from funcionario where nome like '% :? %'",Funcionario.class)
+                "select * from funcionario where nome=?",Funcionario.class)
                 .setParameter(1,nome).getResultList();
         return !resultList.isEmpty()?resultList.get(0):null;
     }

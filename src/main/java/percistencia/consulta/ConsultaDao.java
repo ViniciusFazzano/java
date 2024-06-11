@@ -4,7 +4,6 @@
  */
 package percistencia.consulta;
 
-import entidades.Paciente;
 import java.util.List;
 import percistencia.padrao.InterfaceDao;
 
@@ -13,5 +12,5 @@ import percistencia.padrao.InterfaceDao;
  * @author Beatriz
  */
 public interface ConsultaDao extends InterfaceDao{
-    public  List listarbyPaciente(String nome);
+    public List listarbyNome(String nome);
 }

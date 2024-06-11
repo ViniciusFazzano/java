@@ -4,9 +4,17 @@
  */
 package com.mycompany.clinicaodonto.dto;
 
+import controller.PacienteController;
 import entidades.Consulta;
+import static entidades.Consulta_.dentista;
+import entidades.Funcionario;
+import entidades.Paciente;
 import java.util.LinkedList;
 import java.util.List;
+import percistenciaPaciente.PacienteDao;
+import percistenciaPaciente.PacienteImpl;
+import view.cadastro.Cadastro;
+import view.cadastro.CadastroPaciente;
 
 /**
  *
@@ -23,11 +31,15 @@ public class ConsultaDTO extends DTO{
     public Object builder() {
         Consulta consulta = new Consulta();
         consulta.setId(id!=null?Long.valueOf(id):0l);
-        // buscar paciente consulta.setPaciente(paciente);
+        PacienteDao paciDao = new PacienteImpl();
+        Paciente paci = paciDao.existePaci(nomePaciente);
+        if(paci == null){
+            new Cadastro(null, true, new CadastroPaciente(), new PacienteController()).setVisible(true);
+        }
+        consulta.setPaciente(paci);        
         consulta.setObservacao(obs);
-        //consulta.setAnexos(anexos);
-        //consulta.setDentista(dentista);
-        //consulta.setFormaPagamentos(formaPagamentos);
+        //consulta.setDentista((Funcionario) dentista);
+        //consulta.setFormaPagamentos(pagamentos);
         return consulta;
     }
     
@@ -47,7 +59,6 @@ public class ConsultaDTO extends DTO{
         dto.id=c.getId().toString();
         //dto.nomePaciente.=c.getPaciente();
         dto.obs= c.getObservacao();
-        //dto.anexos=c.getAnexos();
         //dto.nomeDentista=c.getDentista();
         //dto.pagamento=c.getFormaPagamentos();
         

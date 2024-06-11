@@ -5,6 +5,7 @@
 package percistencia.cidade;
 
 import entidades.Cidade;
+import java.util.List;
 import percistencia.padrao.Dao;
 
 /**
@@ -15,9 +16,10 @@ public class CidadeImpl implements CidadeDao{
 
     @Override
     public Cidade existeCid(String nome) {
-        return  (Cidade) Dao.getInstace().getEm().createNativeQuery(
-                 "select * from Cidade where nome = :nome",Cidade.class)
-                .setParameter("nome",nome).getSingleResult();
+        List<Cidade> resultList = Dao.getInstace().getEm().createNativeQuery(
+                "select * from cidade ",Cidade.class)
+                .getResultList();
+        return !resultList.isEmpty()?resultList.get(0):null;
     }
     
 }

@@ -15,6 +15,8 @@ import java.util.LinkedList;
 import java.util.List;
 import percistencia.cidade.CidadeDao;
 import percistencia.cidade.CidadeImpl;
+import percistencia.contato.ContatoDao;
+import percistencia.contato.ContatoImpl;
 import percistencia.endereco.EnderecoDao;
 import percistencia.endereco.EnderecoImpl;
 import percistenciaPaciente.PacienteDao;
@@ -54,8 +56,7 @@ public class PacienteDTO extends DTO{
              if(cid == null){
                  cid =new Cidade();
                  cid.setNome(cidade);
-//                 cid.setEndereco((List<Endereco>) end);
-                 cid.setEstado(UF.valueOf(id));
+                 cid.setEstado(UF.valueOf(estado));
                  cidDao.salvar(cid);
              }
      //        end.setCidade_id(cid);
@@ -71,9 +72,12 @@ public class PacienteDTO extends DTO{
          }
          paciente.setResponsavel(responsavel);
          Contato cont = new Contato();
+         ContatoDao contDao = new ContatoImpl();
          cont.setInformacao(contato);
-         cont.setPaciente(paciente);
-         paciente.setContatos((List<Contato>) cont);
+         contDao.salvar(cont);
+//         cont.setPaciente(paciente);
+        
+         //paciente.setContatos((List<Contato>) cont);
          return paciente;
     }
     

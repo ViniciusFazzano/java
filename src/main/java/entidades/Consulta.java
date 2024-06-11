@@ -34,8 +34,6 @@ public class Consulta implements Serializable {
     @Column
     private String observacao;
 
-    @OneToMany(mappedBy = "consulta")
-    private List<Arquivo> anexos;
 
     @ManyToOne
     private Paciente paciente;

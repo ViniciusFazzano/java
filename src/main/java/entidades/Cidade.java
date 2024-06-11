@@ -28,9 +28,6 @@ public @Data class Cidade implements Serializable{
     private String nome;
     
     private UF estado;
-    
-//    @OneToMany(mappedBy = "cidade", fetch = FetchType.LAZY)
-//    private List<Endereco> endereco;
-        
+
     
 }

@@ -19,8 +19,8 @@ import percistencia.contato.ContatoDao;
 import percistencia.contato.ContatoImpl;
 import percistencia.endereco.EnderecoDao;
 import percistencia.endereco.EnderecoImpl;
-import percistenciaPaciente.PacienteDao;
-import percistenciaPaciente.PacienteImpl;
+import percistencia.paciente.PacienteDao;
+import percistencia.paciente.PacienteImpl;
 
 /**
  *

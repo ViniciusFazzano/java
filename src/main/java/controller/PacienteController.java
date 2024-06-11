@@ -10,8 +10,8 @@ import entidades.Paciente;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import org.json.JSONObject;
-import percistenciaPaciente.PacienteDao;
-import percistenciaPaciente.PacienteImpl;
+import percistencia.paciente.PacienteDao;
+import percistencia.paciente.PacienteImpl;
 
 /**
  *

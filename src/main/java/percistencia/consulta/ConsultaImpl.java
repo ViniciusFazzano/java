@@ -14,10 +14,10 @@ import percistencia.padrao.Dao;
  */
 public class ConsultaImpl implements ConsultaDao{
 
-     @Override
-    public List listarbyPaciente(String nome) {
+    @Override
+    public List listarbyNome(String nome) {
         return Dao.getInstace().getEm().createNativeQuery(
-                 "select * from consulta where paciente like '% :? %'",Consulta.class)
+                 "select * from consulta where nome like '% :? %'",Consulta.class)
                 .setParameter(1,nome).getResultList();
     }
     

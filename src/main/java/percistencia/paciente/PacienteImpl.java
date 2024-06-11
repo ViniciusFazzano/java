@@ -24,8 +24,10 @@ public class PacienteImpl implements PacienteDao {
     @Override
     public Paciente existePaci(String nome) {
         List<Paciente> resultList = Dao.getInstace().getEm().createNativeQuery(
-                "select * from paciente where nome like '% :? %'", Paciente.class)
+                "select * from paciente where nome=?", Paciente.class)
                 .setParameter(1, nome).getResultList();
         return !resultList.isEmpty()?resultList.get(0):null;
     }
+    
+    
 }

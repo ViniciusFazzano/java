@@ -6,6 +6,8 @@ package view.cadastro;
 
 import com.mycompany.clinicaodonto.dto.ConsultaDTO;
 import com.mycompany.clinicaodonto.dto.DTO;
+import entidades.TipoPagamento;
+import javax.swing.DefaultComboBoxModel;
 import view.util.PainelInterface;
 
 /**
@@ -19,6 +21,7 @@ public class CadastroConsulta extends PainelInterface {
      */
     public CadastroConsulta() {
         initComponents();
+        jtTipo.setModel(new DefaultComboBoxModel(TipoPagamento.values()));
     }
 
     /**
@@ -36,8 +39,11 @@ public class CadastroConsulta extends PainelInterface {
         jLabel3 = new javax.swing.JLabel();
         jtDentista = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jtPagamento = new javax.swing.JTextField();
+        jtValor = new javax.swing.JTextField();
         jtObs = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jtTipo = new javax.swing.JComboBox<>();
 
         jLabel1.setText("Paciente");
 
@@ -47,25 +53,39 @@ public class CadastroConsulta extends PainelInterface {
 
         jLabel5.setText("Forma de pagamento");
 
+        jLabel4.setText("Valor");
+
+        jLabel6.setText("Tipo de pagamento");
+
+        jtTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CREDITO", "DEBITO", "PIX", "DINHEIRO" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jtPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jtDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtObs)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(31, 31, 31)
+                            .addComponent(jtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtDentista, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtPagamento)
-                    .addComponent(jtObs))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(jLabel6)))
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -86,7 +106,13 @@ public class CadastroConsulta extends PainelInterface {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -96,11 +122,14 @@ public class CadastroConsulta extends PainelInterface {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jtDentista;
     private javax.swing.JTextField jtObs;
     private javax.swing.JTextField jtPaciente;
-    private javax.swing.JTextField jtPagamento;
+    private javax.swing.JComboBox<String> jtTipo;
+    private javax.swing.JTextField jtValor;
     // End of variables declaration//GEN-END:variables
 
     ConsultaDTO c;
@@ -112,8 +141,8 @@ public class CadastroConsulta extends PainelInterface {
         c.nomePaciente = jtPaciente.getText();
         c.nomeDentista = jtDentista.getText();
         c.obs = jtObs.getText();
-
-        c.pagamento = jtPagamento.getText();
+        c.valor = jtValor.getText();
+        c.formaPag = jtTipo.getSelectedItem().toString();
         return c;
     }
 
@@ -123,7 +152,7 @@ public class CadastroConsulta extends PainelInterface {
         jtPaciente.setText(c.nomePaciente);
         jtDentista.setText(c.nomeDentista);
         jtObs.setText(c.obs);
-
-        jtPagamento.setText(c.pagamento);
+        jtValor.setText(c.valor);
+        jtTipo.setSelectedItem(c.formaPag);
     }
 }

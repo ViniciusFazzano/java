@@ -33,12 +33,12 @@ public class ConsultasController implements Controller{
     @Override
     public Object[] getDados(DTO o) {
         ConsultaDTO dto = (ConsultaDTO) o;
-        return new Object[]{dto.id, dto.nomePaciente, dto.obs, dto.nomeDentista, dto.pagamento};
+        return new Object[]{dto.id, dto.nomePaciente, dto.obs, dto.nomeDentista, dto.valor, dto.formaPag};
     }
     
     @Override
     public String[] getTitulosColunas() {
-        return new String[]{"id", "Nome do Paciente", "Observacoes", "Dentista", "Forma de pagamento"};
+        return new String[]{"id", "Nome do Paciente", "Observacoes", "Dentista","Valor", "Forma de pagamento"};
     }
     
     @Override

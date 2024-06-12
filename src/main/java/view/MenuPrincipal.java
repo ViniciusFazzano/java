@@ -55,8 +55,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         cadMateriais = new javax.swing.JMenuItem();
         consMateriais = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        cadConsultas = new javax.swing.JMenu();
         cadConsulta = new javax.swing.JMenuItem();
+        consConsulta = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
@@ -113,6 +114,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu2.add(cadPaciente);
 
         consPaciente.setText("Consulta");
+        consPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consPacienteActionPerformed(evt);
+            }
+        });
         jMenu2.add(consPaciente);
 
         jMenuBar1.add(jMenu2);
@@ -132,7 +138,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu5.setText("Consultas");
+        cadConsultas.setText("Consultas");
 
         cadConsulta.setText("Cadastro");
         cadConsulta.addActionListener(new java.awt.event.ActionListener() {
@@ -140,9 +146,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 cadConsultaActionPerformed(evt);
             }
         });
-        jMenu5.add(cadConsulta);
+        cadConsultas.add(cadConsulta);
 
-        jMenuBar1.add(jMenu5);
+        consConsulta.setText("Consulta");
+        consConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consConsultaActionPerformed(evt);
+            }
+        });
+        cadConsultas.add(consConsulta);
+
+        jMenuBar1.add(cadConsultas);
 
         jMenu4.setText("jMenu4");
         jMenuBar1.add(jMenu4);
@@ -182,7 +196,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cadPacienteActionPerformed
 
     private void consFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consFuncionarioActionPerformed
-        new Listagem(this, new CadastroPaciente(), new PacienteController()).setVisible(true);
+        new Listagem(this, new CadastroFuncionario(), new FuncionarioController()).setVisible(true);
     }//GEN-LAST:event_consFuncionarioActionPerformed
 
     private void cadMateriaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadMateriaisActionPerformed
@@ -192,6 +206,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void cadConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadConsultaActionPerformed
         new Cadastro(null, true, new CadastroConsulta(), new ConsultasController()).setVisible(true);
     }//GEN-LAST:event_cadConsultaActionPerformed
+
+    private void consConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consConsultaActionPerformed
+         new Listagem(this, new CadastroConsulta(), new ConsultasController()).setVisible(true);
+    }//GEN-LAST:event_consConsultaActionPerformed
+
+    private void consPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consPacienteActionPerformed
+         new Listagem(this, new CadastroPaciente(), new PacienteController()).setVisible(true);
+    }//GEN-LAST:event_consPacienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,10 +253,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem cadConsulta;
+    private javax.swing.JMenu cadConsultas;
     private javax.swing.JMenuItem cadFuncionario;
     private javax.swing.JMenuItem cadLogin;
     private javax.swing.JMenuItem cadMateriais;
     private javax.swing.JMenuItem cadPaciente;
+    private javax.swing.JMenuItem consConsulta;
     private javax.swing.JMenuItem consFuncionario;
     private javax.swing.JMenuItem consMateriais;
     private javax.swing.JMenuItem consPaciente;
@@ -242,7 +266,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;

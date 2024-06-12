@@ -52,18 +52,19 @@ public class Dao {
 
     public void remove(Object o) {
         em.getTransaction().begin();
+        System.out.println(o);
         em.remove(o);
         em.getTransaction().commit();
     }
+
 
     public List listar(Class c, String where) {
         return em.createQuery("select o from " + c.getSimpleName() + " o where 1=1 " + where)
                 .getResultList();
     }
 
-    void remove(Integer id, Class clazz) {
+    void remove(Long id, Class clazz) {
         em.getTransaction().begin();
-        //  em.remove();
-        em.getTransaction().commit();
-    }
+        em.remove(em.find(clazz, id));
+        em.getTransaction().commit();    }
 }

@@ -24,7 +24,7 @@ public class ClinicaOdonto {
 
     public static void main(String[] args) {
 //        Dao.getInstace().listar(Paciente.class, "");
-        new Cadastro(null, true, new CadastroConsulta(), new ConsultasController()).setVisible(true);
-//         Login.main(args);
+//        new Cadastro(null, true, new CadastroConsulta(), new ConsultasController()).setVisible(true);
+         Login.main(args);
     }
 }

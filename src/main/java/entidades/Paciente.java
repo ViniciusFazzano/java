@@ -24,7 +24,8 @@ import lombok.Data;
  * @author Beatriz
  */
 @Entity
-public @Data class Paciente implements Serializable{
+public @Data
+class Paciente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,21 +40,23 @@ public @Data class Paciente implements Serializable{
     private String numCasa;
     @ManyToOne
     private Endereco endereco;
-    @ManyToOne
-    private Paciente responsavel;
+//    @ManyToOne
+//    private Paciente responsavel;
 
-    @OneToMany(mappedBy = "responsavel")
-    private List<Paciente> pacientes;
+//    @OneToMany(mappedBy = "responsavel")
+//    private List<Paciente> pacientes;
+    @Column
+    private String nomeResponsavel;
 
     @OneToMany(mappedBy = "paciente")
-    private List<Contato> contatos;    
-    
+    private List<Contato> contatos;
+
     @OneToMany(mappedBy = "paciente")
     private List<Consulta> consultas;
 
     @OneToMany(mappedBy = "paciente")
     private List<Agendamento> agendamentos;
-    
+
     @OneToMany(mappedBy = "paciente")
     private List<Prontuario> prontuarios;
 }

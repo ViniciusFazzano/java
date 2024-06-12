@@ -40,7 +40,8 @@ public class FuncionarioController implements Controller {
 
     @Override
     public void remover(DTO dto) {
-        dao.remove(((FuncionarioDTO) dto).builder());
+//        System.out.println((Funcionario)((FuncionarioDTO) dto).builder());
+         dao.remove(Long.valueOf(dto.id),Funcionario.class);
     }
 
     @Override

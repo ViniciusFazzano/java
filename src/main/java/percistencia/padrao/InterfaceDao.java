@@ -25,7 +25,7 @@ public interface InterfaceDao {
         Dao.getInstace().remove(entidade);
     }
 
-    public default void remove(Integer id, Class clazz) {
+    public default void remove(Long id, Class clazz) {
         Dao.getInstace().remove(id, clazz);
     }
 

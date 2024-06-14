@@ -3,28 +3,25 @@
  */
 package com.mycompany.clinicaodonto;
 
-import controller.ConsultasController;
-import controller.FuncaoController;
-import controller.MateriaisController;
-import controller.PacienteController;
-import entidades.Paciente;
-import percistencia.padrao.Dao;
-import view.Login;
-import view.cadastro.Cadastro;
-import view.cadastro.CadastroConsulta;
-import view.cadastro.CadastroFuncionario;
-import view.cadastro.CadastroMateriais;
-import view.cadastro.CadastroPaciente;
+import percistencia.login.LoginDao;
+//import entidades.Login;
+import percistencia.login.LoginImpl;
 
 /**
  *
  * @author Beatriz
  */
 public class ClinicaOdonto {
+   
 
     public static void main(String[] args) {
 //        Dao.getInstace().listar(Paciente.class, "");
 //        new Cadastro(null, true, new CadastroConsulta(), new ConsultasController()).setVisible(true);
-         Login.main(args);
+        LoginDao loginDao = new LoginImpl();
+        entidades.Login login = new entidades.Login();
+        login.setUsuario("a");
+        login.setSenha("1");
+        loginDao.salvar(login);
+         view.Login2.main(args);
     }
 }

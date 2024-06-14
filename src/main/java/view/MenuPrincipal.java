@@ -134,6 +134,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu3.add(cadMateriais);
 
         consMateriais.setText("Consulta");
+        consMateriais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consMateriaisActionPerformed(evt);
+            }
+        });
         jMenu3.add(consMateriais);
 
         jMenuBar1.add(jMenu3);
@@ -214,6 +219,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void consPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consPacienteActionPerformed
          new Listagem(this, new CadastroPaciente(), new PacienteController()).setVisible(true);
     }//GEN-LAST:event_consPacienteActionPerformed
+
+    private void consMateriaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consMateriaisActionPerformed
+         new Listagem(this, new CadastroMateriais(), new MateriaisController()).setVisible(true);
+    }//GEN-LAST:event_consMateriaisActionPerformed
 
     /**
      * @param args the command line arguments

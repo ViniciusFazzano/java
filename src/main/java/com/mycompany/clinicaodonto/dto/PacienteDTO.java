@@ -7,7 +7,6 @@ package com.mycompany.clinicaodonto.dto;
 import entidades.Cidade;
 import entidades.Contato;
 import entidades.Endereco;
-import entidades.Funcionario;
 import entidades.Paciente;
 import entidades.UF;
 import java.util.Date;
@@ -19,8 +18,6 @@ import percistencia.contato.ContatoDao;
 import percistencia.contato.ContatoImpl;
 import percistencia.endereco.EnderecoDao;
 import percistencia.endereco.EnderecoImpl;
-import percistencia.paciente.PacienteDao;
-import percistencia.paciente.PacienteImpl;
 
 /**
  *
@@ -60,7 +57,7 @@ public class PacienteDTO extends DTO {
                 cid.setEstado(UF.valueOf(estado));
                 cidDao.salvar(cid);
             }
-            //        end.setCidade_id(cid);
+            end.setCidade_id(cid);
         }
         paciente.setEndereco(end);
 //        PacienteDao paciDao = new PacienteImpl();
@@ -72,13 +69,14 @@ public class PacienteDTO extends DTO {
 //            paciDao.salvar(responsavel);
 //        }
 //        paciente.setResponsavel(responsavel);
-        Contato cont = new Contato();
-        ContatoDao contDao = new ContatoImpl();
-        cont.setInformacao(contato);
-        contDao.salvar(cont);
-//         cont.setPaciente(paciente);
+//        Contato cont = new Contato();
+//        ContatoDao contDao = new ContatoImpl();
+//        cont.setInformacao(contato);
+//        cont.setPaciente(paciente);
+//        contDao.salvar(cont);
 
-        //paciente.setContatos((List<Contato>) cont);
+//        paciente.setContatos((List<Contato>) cont);
+        paciente.setContatos(contato);
         return paciente;
     }
 
@@ -101,23 +99,38 @@ public class PacienteDTO extends DTO {
         dto.numero = p.getNumCasa();
         dto.nomeResponsavel = p.getNomeResponsavel();
 
-        if (p.getEndereco() != null) {
-            dto.endereco = p.getEndereco().getRua();
-            if (p.getEndereco().getRua() != null) {
-                dto.estado = p.getEndereco().getRua();
-            }
+        if (p.getContatos() != null) {
+           dto.contato = p.getContatos();
+
         } else {
-            dto.endereco = "Endereço não disponível";
-            dto.cidade = "Cidade não disponível";
-            dto.estado = "Estado não disponível";
-        }
- 
-        if (p.getContatos() != null && !p.getContatos().isEmpty()) {
-            dto.contato = p.getContatos().get(0).getInformacao();
-        } else {
-            dto.contato = "Contato não disponível";
+            dto.contato = null;
+
         }
 
+        if (p.getEndereco() != null) {
+            dto.endereco = p.getEndereco().getRua();
+        } else {
+            dto.endereco = "Endereço não disponível";
+        }
+
+        if (p.getDataNasc() != null) {
+            dto.nascPaciente = p.getDataNasc();
+        } else {
+            dto.nascPaciente = null;
+        }
+
+        if (p.getEndereco().getRua() != null) {
+            dto.estado = p.getEndereco().getRua();
+
+        } else {
+            dto.estado = null;
+        }
+
+        if (p.getEndereco().getCidade_id() != null) {
+            dto.cidade = p.getEndereco().getCidade_id().getNome();
+        } else {
+            dto.cidade = null;
+        }
         return dto;
     }
 

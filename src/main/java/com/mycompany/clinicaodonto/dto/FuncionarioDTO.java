@@ -22,7 +22,7 @@ public class FuncionarioDTO extends DTO{
         Funcionario funcionario = new Funcionario();
         funcionario.setNome(nomeFuncionario);
         funcionario.setId(id!=null?Long.valueOf(id):0l);
-        funcionario.setRegistro(nomeFuncionario);
+        funcionario.setRegistro(numeroRegistro);
         return funcionario;
     }
     

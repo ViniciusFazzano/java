@@ -40,7 +40,8 @@ public class PacienteController implements Controller{
     
     @Override
     public void remover(DTO dto) {
-        dao.remove(((PacienteDTO) dto).builder());
+//        dao.remove(((PacienteDTO) dto).builder());
+          dao.remove(Long.valueOf(dto.id),Paciente.class);
     }
 
     @Override

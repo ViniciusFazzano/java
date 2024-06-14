@@ -48,8 +48,8 @@ class Paciente implements Serializable {
     @Column
     private String nomeResponsavel;
 
-    @OneToMany(mappedBy = "paciente")
-    private List<Contato> contatos;
+    @Column
+    private String contatos;
 
     @OneToMany(mappedBy = "paciente")
     private List<Consulta> consultas;
